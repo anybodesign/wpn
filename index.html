@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<title>UX et accessibilité avec WordPress - WPN Digital Caen 2018</title>
+	<meta name="author" content="Claire Bizingre et Thomas Villain">
+	<meta name="description" content="Dans le cadre d'un projet web, intégrer l'accessibilité commence dès la conception graphique.">
+
+	<link rel="stylesheet" type="text/css" href="css/pridx.css">
+	<link rel="stylesheet" type="text/css" href="css/slick.css">
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+	
+<div id="wrapper">
+
+	<nav id="skiplinks_nav">
+		<ul class="skiplinks-menu">
+			<li><a href="#main_nav"><span>Aller au menu</span></a></li>
+			<li><a href="#fullpage"><span>Aller au contenu</span></a></li>
+		</ul>
+	</nav>
+
+	<div class="contrast-switch">
+		<button class="toggle-highcontrast" type="button">
+			<img src="img/contrast-off.svg" alt="">
+			Fort contraste
+		</button>
+		<button class="toggle-remove" type="button">
+			<img src="img/contrast-on.svg" alt="">
+			Rétablir le contraste
+		</button>
+	</div>
+		
+
+<!-- 	// Head ***** -->
+	
+	<header id="app_head" class="section" role="banner">
+		
+		<div class="main-title">
+			<h1 class="wow animated bounceInUp" data-wow-delay=".5s">
+				<img src="img/logo-ux-a11y.svg" alt="UX + A11y avec WordPress">
+			</h1>
+		</div>
+		
+		<nav id="main_nav" role="navigation" class="wow animated bounceInUp">
+			<div class="nav-container">
+				<ul class="main-menu">
+					<li class="nav-milk"><a href="#story"><span>Laits histoires</span></a></li>
+					<li class="nav-photo"><a href="#photo"><span>Album souvenir</span></a></li>
+					<li class="nav-hello"><a href="#hello"><span>Coucou</span></a></li>
+				</ul>
+			</div>
+		</nav>
+		
+	</header>
+	
+	
+	<main id="fullpage" role="main">
+	
+		
+	<!-- 	// Story ***** -->
+	
+	
+		<div class="section" id="story">
+<!--
+			<button class="info-bulle-trigger" type="button" aria-expanded="false">Lire le texte</button>
+			<div class="info-bulle">
+				<p>L’accessibilité numérique, c'est proposer aux internautes en situation de handicap, <em>que ce soit au niveau moteur, visuel, auditif ou cognitif,</em> un accès au web et une navigation optimale quel que soit leur équipement.</p>
+				<p>On pense parfois (quand on y pense) que l'accessibilité est un ensemble de techniques à mettre en place au moment de l'intégration et du développement… mais non :)</p>
+				<p>En réalité, intégrer l'accessibilité commence dès la conception graphique ! C'est pourquoi nous allons parler de <strong>design accessible</strong> :)</p>
+				<button class="info-bulle-close" type="button" onclick="window.location.href='#fullpage'">OK merci !</button>
+			</div>
+-->
+
+			<div class="inner">
+				<div class="section-content">
+					<div class="row inner">
+						
+						<div class="col-6">
+							<h2 class="title-std wow animated bounceInDown">
+								Bienvenue en Normandie !
+							</h2>
+							
+							<div class="wow animated bounceInUp" data-wow-delay=".25s">
+								<p class="text-intro">Découvrez des sites incontournables tels que le Mont-Saint-Michel, Etretat ou Rouen, ainsi que des <em>thématiques phares</em> comme le vélo, le cheval, la gastronomie, les sites médiévaux ou les plages du Débarquement...</p>
+								<p>La Normandie dispose de <a href="#photo">nombreux atouts</a> qui en font la <strong>8e destination régionale des touristes français.</strong> Elle est particulièrement bien située sur le segment des courts séjours : elle occupe le 5e rang régional.</p>
+	
+								<h3>Gastronomie normande</h3>
+								<p>La <a href="https://fr.wikipedia.org/wiki/Catégorie:Gastronomie_en_Normandie" target="_blank" title="gastronomie normande (nouvelle fenêtre)">gastronomie normande</a> repose sur les quatre principaux produits de ses terroirs : <strong>la pomme, le lait, la viande et les fruits de mer.</strong> Ces abondants produits constituent la base de nombreuses <em>spécialités régionales.</em></p>
+								<p><strong>Région cidricole,</strong> la Normandie utilise les pommes, <em>le cidre</em> et <em>le calvados</em> dans sa cuisine. <em>Le poiré et l’alcool de poire</em> s’y produisent également.</p>
+								<p><em>Camembert de Normandie, Pont-l'Évêque, Livarot, Neufchâtel…</em> autant <strong>d'appellations d'origine protégées.</strong> Ici les produits laitiers sont à l'honneur.</p>
+								
+							</div>
+							
+						</div>
+						
+						<div class="col-5 left-1 wow animated bounceInRight" data-wow-delay=".5s">
+							<figure role="group">
+								<img class="infographie contrast" src="img/infographie-color.png" alt="Cahier des charges de l'AOP du camembert de Normandie (description ci-après)">
+								<figcaption>
+									Un fromage très règlementé
+								</figcaption>
+							</figure>
+							<button class="action-btn show-transcript" type="button" aria-expanded="false">Transcription</button>
+							<div class="transcript">
+								<p>Cahier des charges de l'AOP du camembert de Normandie.</p>
+								<ul>
+									<li><strong>17 mois</strong> d'affinage minimum</li>
+									<li><strong>10,5 cm</strong> de diamètre, cylindre plat</li>
+									<li>Pâte de couleur ivoire à jaune clair</li>
+									<li>Croûte dite "fleurie", de couleur blanche</li>
+									<li>Poids net <strong>250g</strong></li>
+									<li><strong>45g</strong> de matière grasse pour 100g de fromage</li>
+									<li><strong>Lait cru normand</strong></li>
+									<li>Inscription du nom de l'AOP sur le couvercle</li>
+								</ul>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+
+			<div class="section-next">
+				<a href="#photo" class="next-btn wow animated bounceInUp" data-wow-delay="1.5s" title="Poursuivre la lecture">
+					<img src="img/slider-btn.svg" alt="Poursuivre la lecture">
+				</a>
+			</div>
+
+		</div>
+	
+	
+	<!-- 	// Photo ***** -->
+
+
+		<div class="section" id="photo">
+			
+			<div class="slider-container">
+				<div class="inner">
+					
+					<div class="slicky-slider my-polas">
+					
+						<figure class="pola" role="group">
+							<img src="img/cow1.jpg" alt="Photo 1">
+							<figcaption>
+								<span class="screen-reader-text">Photo 1 : </span>
+								Oh, la vache…
+							</figcaption>
+						</figure>
+					
+						<figure class="pola" role="group">
+							<img src="img/cow2.jpg" alt="Photo 2">
+							<figcaption>
+								<span class="screen-reader-text">Photo 2 : </span>
+								Les vaches sont curieuses de nature
+							</figcaption>
+						</figure>
+					
+						<figure class="pola" role="group">
+							<img src="img/cow3.jpg" alt="Photo 3">
+							<figcaption>
+								<span class="screen-reader-text">Photo 3 : </span>
+								Vaches au soleil couchant
+							</figcaption>
+						</figure>
+					
+						<figure class="pola" role="group">
+							<img src="img/cow4.jpg" alt="Photo 4">
+							<figcaption>
+								<span class="screen-reader-text">Photo 4: </span>
+								Vaches au bord de la falaise
+							</figcaption>
+						</figure>
+					
+						<figure class="pola" role="group">
+							<img src="img/cow5.jpg" alt="Photo 5">
+							<figcaption>
+								<span class="screen-reader-text">Photo 5 : </span>
+								Problèmes de vaches
+							</figcaption>
+						</figure>
+						
+					</div>
+				
+				
+					<div class="row x-center">
+						<div class="col-6">
+							<div class="photos-infos">
+								
+								<h3 class="wow animated bounceInUp">Mes souvenirs de Normandie</h3>
+								<p class="wow animated bounceInUp" data-wow-delay=".25s">Séjour mis à profit pour réaliser un magnifique reportage photo sur les vaches normandes et leur environnement :)</p>
+								<a href="https://unsplash.com/search/photos/cow" class="action-btn wow animated bounceInUp" data-wow-delay=".5s">Toutes les photos</a>
+								
+							</div>
+						</div>
+					</div>
+				
+				</div>
+			</div>
+
+			<div class="section-next">
+				<a href="#hello" class="next-btn wow animated bounceInUp" data-wow-delay="1.5s" title="Poursuivre la lecture">
+					<img src="img/slider-btn.svg" alt="Poursuivre la lecture">
+				</a>
+			</div>
+			
+		</div>	
+
+	
+	<!-- 	// Hello ***** -->		
+
+
+		<div class="section" id="hello">
+			<div class="inner">
+				
+				<div class="section-content">
+					<div class="row x-center">
+						
+						<div class="col-10 form-intro">
+							<h2 class="wow animated bounceInUp">Faites-nous coucou !</h2>
+							<p class="wow animated bounceInUp" data-wow-delay=".25s">Car recevoir un courriel, ça fait toujours très très plaisir ^^</p>
+						</div>
+						
+						<div class="col-4">
+							<form>
+								<fieldset>
+									<legend>Durée de votre séjour</legend>
+									<div class="formfield-select">
+										<label for="duree">Combien de temps restez-vous ?</label>
+										<div class="formfield-select--container">
+											<select id="duree">
+												<option>1 semaine</option>
+												<option>2 semaines</option>
+												<option>3 semaines</option>
+												<option>1 mois</option>
+												<option>3 mois</option>
+												<option>Encore plus</option>										
+											</select>
+										</div>
+									</div>
+								</fieldset>
+								
+								<fieldset>
+									<legend>Qui êtes-vous ?</legend>
+
+									<div class="inline-fields">
+										<div class="formfield-radio">
+											<input type="radio" id="madame" name="genre">
+											<label for="madame">Mme</label>
+										</div>
+										<div class="formfield-radio">
+											<input type="radio" id="monsieur" name="genre">
+											<label for="monsieur">M.</label>
+										</div>
+									</div>
+
+									<div class="formfield-half">
+										<div class="formfield-text">
+											<label for="prenom">Prénom</label>
+											<input type="text" id="prenom" placeholder="Gustave">
+										</div>
+										<div class="formfield-text">
+											<label for="nom">Nom</label>
+											<input type="text" id="nom" placeholder="Flaubert">
+										</div>
+									</div>
+									
+									<div class="formfield-text">
+										<label for="email">Adresse courriel</label>
+										<input type="email" id="email" placeholder="Ex: gus@normandie.fr">
+									</div>
+									<div class="formfield-textarea">
+										<label for="message">Un petit message</label>
+										<textarea id="message" placeholder="Ex: Je passe de bonnes vacances sous la pluie, bisous."></textarea>
+									</div>
+								</fieldset>
+
+								<div class="formfield-checkbox">
+									<input type="checkbox" id="optin">
+									<label for="optin">Je suis toujours conforme au RGPD !</label>
+								</div>
+								
+								<div class="submit-container">
+									<input type="submit" class="action-btn" value="C'est parti !">
+								</div>
+								
+							</form>
+						</div>
+						
+					</div>
+				</div>
+				
+			</div>
+			
+			
+			<div class="section-next">
+				<a href="#thanks" class="next-btn wow animated bounceInUp" data-wow-delay="1.5s" title="Poursuivre la lecture">
+					<img src="img/slider-btn.svg" alt="Poursuivre la lecture">
+				</a>
+			</div>
+			
+		</div>			
+
+	
+	<!-- 	// Thanks ***** -->
+	
+	
+		<div class="thanks-section" id="thanks">
+			
+			<div class="inner">
+				
+				<h2 class="wow animated bounceInDown">
+					Merci de votre attention&nbsp;!
+				</h2>
+
+				<div class="section-content">
+					<div class="row inner x-center">
+						
+						<div class="col-3 mid-6 wow animated bounceInLeft" data-wow-delay=".5s">
+							<figure role="group" class="round-figure">
+								<img src="img/claire.jpg" alt="">
+								<figcaption>
+									Claire Bizingre
+									<span>Experte en Accessibilité numérique</span>
+								</figcaption>
+							</figure>
+							<ul class="author-infos">
+								<li><a href="//temesis.com">temesis.com</a></li>
+								<li><a href="//twitter.com/accessbilis/">@accessbilis</a></li>
+							</ul>
+						</div>
+						
+						<div class="col-3 mid-6 wow animated bounceInRight" data-wow-delay="1s">
+							<figure role="group" class="round-figure">
+								<img src="img/thomas.jpg" alt="">
+								<figcaption>
+									Thomas Villain
+									<span>Web designer</span>
+								</figcaption>
+							</figure>
+							<ul class="author-infos">
+								<li><a href="//anybodesign.com">anybodesign.com</a></li>
+								<li><a href="//twitter.com/anybodesign/">@anybodesign</a></li>
+							</ul>
+						</div>
+						
+					</div>
+				</div>
+				
+			</div>
+
+		</div>	
+		
+	</main> <!-- End fullPage -->
+
+
+	<footer class="thanks-footer" role="contentinfo">
+		<div class="row inner x-center">
+			<p>Sources : wikipedia, normandie-tourisme.fr, fromage-normandie.fr<br>
+			Unsplash : Amanda Kerr, Stijn Te Strake, Théo Leconte<br>
+			Pixabay : Kai_Vogel, uvlik05</p>
+		</div>
+	</footer>
+
+</div>
+
+
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/jquery.cookie.js"></script>
+<script src="js/slick.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/main.js"></script>
+
+<script>
+	new WOW().init();
+</script>
+
+</body>
+</html>

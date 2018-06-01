@@ -1,0 +1,426 @@
+// Skiplinks
+
+
+#skiplinks_nav {
+	position: absolute; 
+	padding: 0;
+	z-index: 9000;
+}
+.skiplinks-menu {
+	
+	a {
+		position: fixed; 
+		top: -6rem;
+		left: $grid-padding;
+		padding: $grid-padding;
+		padding-left: $grid-padding*5;
+		font-family: $font-title;
+		color: #fff;
+		text-decoration: none;
+		transition: .4s ease-in-out;
+		
+		span {
+			position: relative;
+			background-color: $text-color;
+			padding: 0 .5rem;
+			z-index: 2;
+			
+			.highcontrast & {
+				color: #fff;
+				background-color: #000;
+			}
+		}
+		
+		&::after {
+			content: '';
+			display: block;
+			width: 83px; 
+			height: 86px;
+			background: url(img/pentagone-jaune2.svg) 0 0 no-repeat;
+			position: absolute;
+			top: -25%;
+			left: 0;
+			z-index: -1;
+			
+			.fixed-nav & {
+				opacity: .2;
+			}
+		}
+	
+		&:hover, 
+		&:focus {
+			top: 0;
+			outline: none;
+		}
+
+
+	}
+	
+}
+
+
+// Contrast
+
+.contrast-switch {
+	position: absolute;
+	right: 0;
+	top: 0;
+	padding: $grid-padding;
+	background-color: #fff;
+	z-index: 900;
+	
+	@include rwd(large) {
+		//background-color: transparent; 
+	}		
+	
+	& button {
+		position: relative;
+		display: block;
+		max-width: 60px;
+		font-family: $font-title;
+		color: $text-color;
+		text-decoration: none;
+		font-size: 1.1rem;
+		padding: 0;
+		margin: 0;
+		background-color: transparent;
+		
+		img {
+			display: block;
+			width: 32px;
+			position: relative;
+			top: 0;
+			margin: 0 auto $grid-padding/2 auto;
+			transition: .2s ease-in-out;
+			
+			@include rwd(large) {
+				width: auto; 
+			}
+		}
+		@include rwd(large) {
+			font-size: 1.3rem;
+			max-width: 90px; 
+		}
+	}
+	
+	& button:focus, 
+	& button:hover {
+		border-bottom: $text-color 2px solid;
+		background-color: transparent;
+		
+		img {
+			top: -2px;
+		}
+	}
+}
+
+.toggle-remove { display: none !important; }
+
+
+.highcontrast {
+	.toggle-highcontrast { display: none; }
+	.toggle-remove { display: block !important; }
+}
+
+
+
+// Main nav
+
+
+#main_nav {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	z-index: 3;
+	
+	.fixed-nav & {
+		position: fixed;
+		top: 0; 
+		left: 0;
+		bottom: auto;
+		
+		@include rwd(small) {
+			&::after {
+				content: '';
+				display: block;
+				width: 100%;
+				height: 3.5rem;
+				background-color: #fff;
+			}
+		}
+	}
+
+}
+.nav-container {
+	position: relative;
+	padding-top: 24rem;
+	background-color: lighten($secondary-color, 20%);
+	z-index: 1;
+	
+	.highcontrast & {
+		background-color: #000;
+	}
+	.fixed-nav & {
+		padding-top: 0;
+	}
+	
+	@include rwd(small) {
+		padding-top: 0;
+	}	
+}
+
+.main-menu {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 100%;
+	max-width: $max-width;
+	margin: 0 auto;
+	z-index: 100;
+
+	@include rwd(small) {
+		justify-content: flex-end;
+	}
+		
+	li {
+		display: block;
+		position: relative;
+		color: $text-color;
+		font-family: $font-title;
+		text-transform: uppercase;
+		
+		@include rwd(large) {
+			margin-left: $grid-padding*2;
+		}
+		@include rwd(wide) {
+
+		}
+		
+		a {
+			position: relative;
+			display: block;
+			padding: $grid-padding/2;
+			font-size: 1.3rem;
+			text-decoration: none;
+			border-bottom: transparent 5px solid;
+			
+			.fixed-nav & {
+				padding-top: $grid-padding/2;
+				padding-bottom: $grid-padding/4;
+			}
+			
+			@include rwd(small) {
+				padding-top: 10rem;
+				font-size: 1.8rem;
+			}
+			@include rwd(medium) {
+			}
+			@include rwd(large) {
+				padding-top: 4.5rem;
+				font-size: 2rem;
+				transition: .2s ease-in-out;
+			}
+			
+			&::before,
+			&::after {
+				display: block;
+				position: absolute;
+				left: 50%;
+								
+				.fixed-nav & {
+					content: none;
+				}
+			}
+			&::before {
+				transform: translateX(-50%) translateY(-110%);
+				transition: transform .2s ease-in-out;
+				background: url(img/sprite.svg) 0 0 no-repeat;
+				z-index: 1;
+				
+				@include rwd(large) {
+					content: '';
+				}
+			}
+			&::after {
+				width: 285px;
+				height: 285px;
+				top: 50%;
+				transform: translateX(-50%) translateY(-50%);
+				background: url(img/star.svg) 0 0 no-repeat;
+				z-index: -1;
+				opacity: 0;
+				
+				@include rwd(xwide) {
+					content: '';
+				}				
+			}
+			
+			span {
+				color: $text-color;
+
+				.highcontrast & {
+					color: #fff;
+				}				
+			}
+			// Intitulés
+			
+/*
+				span {
+					display: block;
+					width: 16rem;
+					height: .5rem;
+					margin: 0;
+					@include a11y-hide();
+				}
+*/
+				
+				
+			 
+		}
+		a:hover, 
+		a:focus, 
+		a:active,
+		&.active a {
+			color: $primary-color;
+			border-bottom-color: $primary-color;
+			//outline: none;
+
+			.highcontrast & {
+				border-bottom-color: #fff;
+				
+				span {
+					//color: $primary-color;
+				}
+			}
+			
+			&::before {
+				transform: translateX(-50%) translateY(-110%) rotate(5deg);
+			}
+			&::after {
+				opacity: 1;
+
+				.highcontrast & {
+					opacity: .3;
+				}					
+				
+			}	
+			
+		}
+	}
+	
+	// Icons
+	
+	li.nav-milk {
+		a::before {
+			width: 57px; 
+			height: 120px;
+			background-position: -20px -110px;
+
+				.highcontrast & {
+					background-position: -20px -390px;
+					background-position: -20px -250px;
+				}			
+		}
+		a:hover::before,
+		a:focus::before,
+		a.active::before {
+			background-position: -20px -250px;
+		}
+	}
+	li.nav-photo {
+		a::before {
+			width: 88px; 
+			height: 73px;
+			background-position: -120px -157px;
+
+				.highcontrast & {
+					background-position: -120px -437px;
+					background-position: -120px -297px;
+				}
+		}
+		a:hover::before,
+		a:focus::before,
+		a.active::before {
+			background-position: -120px -297px;
+		}
+	}
+	li.nav-hello {
+		a::before {
+			width: 84px; 
+			height: 76px;
+			background-position: -250px -154px;
+
+				.highcontrast & {
+					background-position: -250px -434px;
+					background-position: -250px -294px;
+				}
+		}
+		a:hover::before,
+		a:focus::before,
+		a.active::before {
+			background-position: -250px -294px;
+		}
+	}
+
+
+	
+	
+
+	
+}
+
+
+
+#menu-toggle {
+
+	// Hamburger Menu
+	
+	display: block; 
+	height: 23px; width: 23px;
+	position: relative;
+	border: 0; border-radius: 0; padding: 0;
+	cursor: pointer;
+	@include a11y-hide(60px);
+
+	span {
+		position: absolute; 
+		top: 10px; right: 0;
+	}
+	span, span::after, span::before {
+		display: block;
+		width: 23px; height: 3px;
+		background-color: #000;
+		transition: all .3s linear;
+	}
+	span::after, span::before {
+		position: absolute;
+		content: ""; 
+	}
+	span::after {bottom: -9px; left: 0;}
+	span::before {top: -9px; left: 0;}
+
+	&.menu-opened span {
+		background-color: transparent; 
+		height: 1px;
+	}
+	&.menu-opened span::after {
+		top: 0;
+		transform: rotate(45deg);
+		background-color: $primary-color;
+	}
+	&.menu-opened span::before {
+		top: 0;
+		transform: rotate(-45deg);
+		background-color: $primary-color;
+	}
+
+	&:hover {
+		background-color: transparent;
+	}	
+	
+	@include rwd(medium) {
+		display: none;				
+	}
+}

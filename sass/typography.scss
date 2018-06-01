@@ -1,0 +1,699 @@
+// ------------------------------
+//
+// = Typography & Markup Elements
+//
+// ------------------------------
+
+
+// Basics
+
+html {
+	font-size: .625em; 				// fallback IE8+
+	font-size: calc(1em * .625); 	// IE9-IE11 math fixing. See http://bit.ly/1g4X0bX
+}
+body {
+	font-size: 1.6em; 				// base font-size is equivalent "14px"
+    line-height: 1.5;
+}
+
+
+// Typography
+
+h1, h2, h3, h4, h5, h6,
+.h1-like, .h2-like, .h3-like, .h4-like, .h5-like, .h6-like {
+	color: $primary-color;
+	font-family: $font-title;
+	font-weight: normal;
+	text-align: left;
+
+	b, strong {
+		font-weight: normal;
+	}
+	i, em {
+		font-style: normal;
+	}
+	
+	.highcontrast & {
+		color: #000;
+	}
+	.dark-bg & {
+		color: #fff;
+		
+		.highcontrast & {
+			color: #fff;
+		}
+	}
+}
+
+h1, 
+.h1-like {
+    font-size: 3.6rem;
+    line-height: 1.2;
+    margin: 0 0 .75em 0;
+}
+h2, 
+.h2-like {
+	font-size: 3.2rem;
+	line-height: 1.2;
+	margin: .75em 0;
+    
+    &:first-child {
+	    margin-top: 0;
+    }
+}
+h3, 
+.h3-like {
+    font-size: 2.6rem;
+	line-height: 1;
+    margin: 1.25em 0 .75em 0;
+}
+h4, 
+.h4-like {
+    font-size: 2.2rem;
+    line-height: 1;
+    margin: 0 0 .5em 0;
+}
+h5, 
+.h5-like {
+    font-size: 2rem;
+    line-height: 1;
+    margin: 0 0 1em 0;
+}
+h6, 
+.h6-like {
+    font-size: 1.8rem;
+    line-height: 1;
+    margin: 0 0 1em 0;
+}
+
+p, 
+ul, ol, dl, 
+blockquote, 
+pre, 
+td, th, 
+textarea,
+label, legend, figcaption, 
+hgroup, address,
+time, span,
+small {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    margin: 0 0 1.5em 0;
+	font-family: $font-regular;
+	color: $text-color;
+	text-align: left;
+
+	.highcontrast & {
+		color: #000;
+	}
+	.dark-bg & {
+		color: #fff;
+	}	
+}
+span {
+	font-family: inherit;
+	color: inherit;
+	font-size: inherit;
+}
+
+b, strong {
+	font-family: $font-bold;
+	font-weight: normal;
+}
+i, em {
+	font-family: $font-italic;
+	font-style: normal;
+}
+
+li p,
+li ul {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+a {
+	color: inherit;
+	background-color: transparent;
+}
+a:hover {
+	text-decoration: none;
+}
+
+p a,
+.common-link {
+	text-decoration: none;
+	border-bottom: $primary-color 1px solid;
+	transition: .2s ease-in-out;
+	
+	.dark-bg &,
+	.highcontrast .dark-bg & {
+		color: #fff;
+		border-bottom-color: #fff
+	}
+	
+	&:active {
+		border-bottom-width: 0;	
+	}
+
+	.highcontrast & {
+		border-bottom-color: #000;
+	}	
+
+	&:hover {
+		color: #fff;
+		background-color: $primary-color;
+		border-bottom-width: 0;
+
+		.highcontrast & {
+			background-color: #000;
+		}
+
+		.dark-bg & {
+			color: $text-color;
+			background-color: #fff;
+		}
+				
+	}
+	&:focus {
+		color: #fff;
+		background-color: $text-color; 
+		
+		.dark-bg & {
+			color: $text-color;
+			background-color: #fff;
+		}
+	}
+	
+	
+	
+	&[target="_blank"]::after {
+		content: '➚';
+		display: inline-block;
+		vertical-align: top;
+		margin-left: 3px;
+	
+		.dark-bg & {
+			
+		}		
+	}
+}
+
+.text-intro {
+	font-size: 2rem;
+	font-family: $font-bold;
+	
+	em {
+		font-style: normal;
+		font-family: $font-bolditalic;
+	}
+	
+	// Mauvais style em, à supprimer
+	
+	em {
+		text-decoration: underline;
+		font-family: $font-bold;
+	}
+}
+
+
+q,
+blockquote {
+	position: relative;
+	max-width: 75%;
+	margin: $grid-padding 0;
+	padding: 1em 0 .75em 112px;
+
+	@include rwd(large) {
+		padding: 1em 0 .75em 0;
+
+		&::before {
+			content: '';
+			display: block;
+			width: 50%;
+			height: 1px;
+			background-color: $primary-color;
+			margin: 0 auto 5rem auto;
+	
+			.highcontrast & {
+				background-color: #777;
+			}	
+		}
+	}
+		
+	&::after {
+		content: '';
+		display: block;
+		width: 108px; height: 78px;
+		background: url(img/icon/quote.svg) 0 0 no-repeat;
+		position: absolute;
+		top: -2rem;
+		left: 0;
+	
+		@include rwd(large) {
+			top: 3rem;
+			left: -80px;
+		}	
+	}
+	
+
+	
+}
+q,
+blockquote,
+blockquote p {
+	font-family: Georgia, serif;
+	font-style: italic;
+	font-weight: bold;
+	font-size: 2rem;
+	
+}
+blockquote p {
+	margin-bottom: 0;
+}
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sub {
+  bottom: -0.25em;
+}
+sup {
+  top: -0.5em;
+}
+
+mark {
+  background-color: #ff0;
+  color: #000;
+}
+
+small {
+  font-size: 75%;
+}
+
+
+// Code stuff
+
+code, pre, samp, kbd {
+	white-space: pre-line; // IE fix
+	white-space: pre-wrap;
+	font-family: $font-mono;
+	font-size: 1em;
+	line-height: 1;
+}
+
+kbd {
+	padding: 0 2px;
+	border: 1px solid #999;
+	border-radius : 2px;
+}
+
+code, pre {
+	background-color: #eee;
+	color: #999;
+}
+code {padding: .5em;}
+
+pre {
+	padding: .5em 1.5em;
+	border: #ccc 1px dashed;
+	white-space: pre-line;
+}
+
+mark {
+	padding: .5em;
+	background: #ff0;
+}
+
+
+// If an error output is needed
+
+.error {
+	padding: .5em;
+	background: red; 
+	color: #fff;
+}
+
+
+// Max values
+
+img, td,
+blockquote, code, pre,
+textarea, input, video {
+	max-width: 100%;
+}
+
+
+// Lists
+
+ul, ol {
+	padding-left: 1.5em;
+}
+
+ul {
+	list-style-type: disc;
+}
+ol {
+	list-style-type: decimal;
+}
+
+nav ul, 
+nav ol {
+	padding: 0; 
+	margin: 0; 
+	list-style-type: none;
+}
+
+li ul, 
+li ol {
+	margin-top: 0; 
+	margin-bottom: 0;
+}
+
+
+// Images
+
+img {
+	height: auto;
+	border: 0;
+	border-style: none;
+}
+
+figure {
+	margin: 0 0 1em 0;
+	overflow: hidden;
+	
+	img {
+		display: block;
+		width: 100%; 
+		height: auto;
+	}
+
+
+	&.pola {
+		display: block;
+		overflow: visible;
+		position: relative;
+		width: 241px;
+		height: 293px;
+		margin: auto;
+		transform: rotate(5deg);
+		z-index: 20;
+		
+		.slick-slide:nth-child(even) & {
+			transform: rotate(-5deg);
+		}
+		
+		@include rwd(large) {
+			width: 292px;
+			height: 355px;
+			margin-bottom: -0.5rem;
+		}
+		
+		&::before {
+			content: '';
+			display: block;
+			width: 241px;;
+			height: 293px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background: url(img/pola.png) 0 0 no-repeat;
+			background-size: cover;
+			z-index: 2;
+			
+			@include rwd(large) {
+				width: 292px;
+				height: 355px
+			}
+		}
+		&::after {
+			content: '';
+			display: block;
+			width: 248px;
+			height: 35px;
+			position: absolute;
+			top: 0; 
+			left: 0;
+			margin-top: -8px;
+			margin-left: -14px;
+			background: url(img/pinces-odd.svg) 0 0 no-repeat;
+			background-size: contain;
+			transform: rotate(-5deg);
+			z-index: 4;
+			
+			@include rwd(large) {
+				width: 300px;
+				height: 43px;
+			}
+		}
+		.slick-slide:nth-child(even) &::after {
+			margin-top: -14px;
+			margin-left: 8px;
+			transform: rotate(5deg);
+			background: url(img/pinces-even.svg) 0 0 no-repeat;
+			background-size: contain;
+		}
+		
+		img {
+			width: 220px;
+			height: 220px;
+			position: relative;
+			top: 11px;
+			left: 11px;
+			z-index: 1;
+			
+			@include rwd(large) {
+				width: 266px;
+				height: 266px;
+				top: 18px;
+				left: 13px;
+			}
+		}
+
+		figcaption {
+			position: relative;
+			display: block;
+			max-width: 220px;
+			border: 0;
+			padding: 2.8rem;
+			background-color: transparent;
+			font-family: $font-title;
+			color: $text-color;
+			z-index: 3;
+
+			.highcontrast & {
+				color: #000;
+			}			
+		}
+		
+	}
+	
+}
+
+figure.round-figure {
+	margin-bottom: 0;
+	
+	img {
+		border-radius: 50%;
+		overflow: hidden;
+		border: $primary-color 4px solid;
+	}
+	
+	figcaption {
+		border: 0;		
+		font-family: $font-title;
+		color: $primary-color;
+		font-size: 2rem;
+		text-align: center;
+
+		.highcontrast & {
+			color: #000;
+		}
+		
+		span {
+			display: block;
+			color: $text-color;
+			font-family: $font-bold;
+			font-size: 1.6rem;
+			text-align: center;
+			margin: 0;
+
+			.highcontrast & {
+				color: #000;
+			}						
+		}
+	}
+}
+
+
+figcaption {
+	font-size: .85em; 
+	line-height: 1;
+	margin: .5em 0;
+	font-family: $font-title;
+	text-align: left;
+	padding-top: $grid-padding;
+	border-top: $primary-color 1px solid;
+
+	.highcontrast & {
+		color: #000;
+	}	
+}
+
+
+// Tables (responsive)
+
+
+.table-container {  // Wrap the <table> inside this container
+	width: 100%; 
+	overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    margin-bottom: 1.5em;
+}
+thead {
+	display: none;
+	background-color: $secondary-color;
+
+	.highcontrast & {
+		background-color: #000;
+	}	
+	
+	th {
+		color: #fff;
+
+		.highcontrast & {
+			color: #fff;
+		}	
+		
+	}
+}
+
+td, th {
+	display: block;
+	vertical-align: middle;
+	margin-bottom: 0;
+	padding: .5em;
+	border: $primary-color 1px solid;
+	text-align: center;
+
+	.highcontrast & {
+		border-color: #666;
+	}	
+	
+	
+	thead &, 
+	tbody &, 
+	tfoot & {
+		border-top: 0;
+	}
+	tbody &:first-child,
+	thead & {
+		border-top: $primary-color 1px solid;
+	}
+	
+}
+
+tbody td::before {
+	content: attr(data-title);
+}
+
+@include rwd(medium) {
+	thead {
+		display: table-row-group;
+	}
+	tr {
+		display: table-row;
+	}
+	td, th {
+		display: table-cell;
+	}
+}
+
+
+
+// Misc
+
+
+hr {
+  box-sizing: content-box;
+  height: 0; 
+  overflow: visible;
+}
+
+iframe {
+	width: 100%;
+}
+
+
+
+
+// Buttons
+
+// You can use the class .action-btn on <a>, <button> or <input> 
+
+.action-btn,
+button.action-btn,
+input[type=submit].action-btn {
+	display: inline-block;
+	padding: $grid-padding $grid-padding*2;
+	font-size: 1.4rem;
+	font-family: $font-bold;
+	text-transform: uppercase;
+	text-decoration: none;
+	background-color: $primary-color;
+	color: #fff;
+	border: transparent 2px solid;
+	transition: .2s linear;
+
+	.highcontrast & {
+		background-color: #000;
+	}	
+
+	&:hover,
+	&:focus {
+		background-color: #fff;
+		color: $primary-color;
+		border-color: $primary-color;
+	
+		.highcontrast & {
+			color: #000;
+			border-color: #000;
+		}	
+	
+	}
+}
+
+.next-btn,
+button.next-btn {
+	display: block;
+	background-color: transparent;
+	padding: 0;
+	
+	img {
+		width: 40px;
+		height: 40px;
+		transform: rotate(90deg);
+		transition: transform .2s ease-in-out;
+
+		.highcontrast & {
+			filter: grayscale(100%) contrast(10);
+			padding: 1px;
+		}		
+	}
+	
+	&:hover,
+	&:focus {
+		
+		img {
+			transform: rotate(90deg) scale(1.1);
+		}
+	}
+
+	
+}

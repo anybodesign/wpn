@@ -1,0 +1,470 @@
+/*!
+Project: WPN Digital Caen 2018
+Description: UX et accessibilité avec WordPress
+Author: Claire Bizingre et Thomas Villain
+Author URI: https://anybodesign.com/
+Project URI: https://lab.anybodesign.com/wpn/
+Project source code: https://github.com/anybodesign/wpn/
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+@import 'sass/reset.scss';
+
+@import 'sass/variables.scss';
+@import 'sass/mixins.scss';
+
+
+@import 'sass/typography.scss';
+@import 'sass/forms.scss';
+
+
+/* ------------------------- */
+/* = Basics
+/* ------------------------- */
+
+
+html, 
+body, 
+#wrapper {
+	width: 100%; 
+	height: 100%; 
+}
+
+#wrapper.overlay {
+	&::after {
+		content: '';
+		display: block;
+		width: 100%; 
+		height: 100%;
+		position: fixed;
+		top: 0; 
+		left: 0;
+		background-color: transparentize($text-color, .2);
+		z-index: 3; 
+	}	
+}
+
+body {
+	text-size-adjust: none;
+}
+
+.inner {
+	position: relative;
+	margin: 0 auto;
+	max-width: $max-width;
+}
+
+[class*="col-"] { 
+	padding: $grid-padding; 
+}
+
+
+.section {
+	position: relative;
+	
+	width: 100%;
+	min-height: 100vh;
+	padding: 10rem 0;	
+
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	
+	@include rwd(large) {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		background-attachment: fixed;
+		padding: 10rem 0;			
+	}
+	
+	& .inner {
+		width: 100%;
+	}
+
+}
+
+.section-content {
+	position: relative;
+	z-index: 2;
+}
+.section-next {
+	position: absolute;
+	bottom: $grid-padding*2;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	z-index: 2;
+	
+	a {
+		display: inline-block;
+		margin: 0 auto;
+	}
+}
+
+.transcript {
+	display: none;
+	border: $primary-color 2px dashed;
+	background-color: $comp1-color;
+	padding: $grid-padding;
+}
+
+
+/* ------------------------- */
+/* = Header
+/* ------------------------- */
+
+
+#app_head {
+	animation: fade-in .6s;
+	background-image: url(img/bg-head.jpg);
+	z-index: 5;
+	
+	@include rwd(small) {
+		background-position: 25% 0;
+	}
+}
+
+.main-title {
+	display: block;
+	position: absolute;
+	bottom: 2rem;
+	left: 50%;
+	margin-left: -215px;
+	z-index: 5;
+	pointer-events: none;
+
+	h1 {
+		margin: 0;
+		z-index: 5;
+	}	
+	img {
+		display: block;
+		height: 266px;
+		width: auto;
+		transition: .4s ease-in-out;
+	}
+
+	@include rwd(small) {
+		left: 0;
+		bottom: -0.7rem;
+		margin-left: -8rem;
+	}
+	
+	@include rwd(large) {
+		bottom: -5.8rem;
+		left: 0;
+	}
+	
+	@include rwd(wide) {
+		left: calc((100% - #{$max-width}) / 2);
+		margin-left: -10rem;
+	}
+
+
+	.fixed-nav & {
+		display: none;
+		position: fixed;
+		top: .25rem;
+
+		img {
+			height: 80px;
+			width: auto;
+		}
+		
+		@include rwd(small) {
+			display: block;
+			height: 80px;
+			width: auto;
+			left: 0;
+			margin-left: -3rem;
+		}
+		@include rwd(medium) {
+			height: 90px;
+			margin-left: 0;
+			
+			img {
+				height: 90px;
+			}
+		}
+		@include rwd(wide) {
+			left: calc((100% - #{$max-width}) / 2);
+			margin-left: -10rem;
+		}		
+	}	
+	
+
+
+
+}
+
+
+
+/* ------------------------- */
+/* = Nav
+/* ------------------------- */
+
+
+@import 'sass/nav.scss';
+
+
+
+/* ------------------------- */
+/* = Content
+/* ------------------------- */
+
+
+@import 'sass/content.scss';
+
+.info-bulle-trigger {
+	position: absolute;
+	top: 12rem;
+	right: $grid-padding*2;
+	display: block;
+	width: 30px;
+	height: 30px;
+	padding: 0;
+	margin: 0;
+	background: $secondary-color url(img/icon/questionmark.svg) center center no-repeat;
+	background-size: 60% 60%;
+	border-radius: 50%;
+	@include a11y-hide();
+	transition: transform .4s ease-in-out;
+	z-index: 5;
+	
+	&:hover,
+	&:focus {
+		transform: scale(1.3);
+		background-color: $secondary-color;
+	}
+}
+.info-bulle {
+	position: relative;
+	top: $grid-padding;
+	//left: 50%;
+	//transform: translateX(-50%);
+	text-align: left;
+	max-width: 95%;
+	background-color: #fff;
+	padding: $grid-padding*2;
+	box-shadow: 0px 20px 120px rgba(0, 0, 0, 0.8);
+	
+	display: none;
+	z-index: 5;
+	
+	&.bulle-opened {
+		display: block;
+		animation: fadeIn 1s;
+	}
+		
+	@include rwd(medium) {
+		max-width: 70%;
+	}
+	@include rwd(wide) {
+		max-width: 40%;
+	}
+}
+.info-bulle-close {
+	display: block;
+	text-align: left;
+	@extend .action-btn;
+}
+
+.blur {
+	filter: blur(10px) grayscale(1);
+}
+
+
+/* ------------------------- */
+/* = Footer
+/* ------------------------- */
+
+
+.thanks-footer {
+	padding: $grid-padding*2 $grid-padding;
+	background-color: lighten($secondary-color, 25%);
+	width: 100%;
+	
+	.highcontrast & {
+		background-color: #efefef;
+	}			
+	
+	p {
+		text-align: center;
+		margin-bottom: 0;
+		font-size: 1.4rem;
+	}
+}
+	
+
+
+
+
+/* ------------------------- */
+/* = Helpers
+/* ------------------------- */
+
+
+.screen-reader-text {
+	@include a11y-hidden();
+}
+
+
+// Slick
+
+
+.slick-list {
+    .slick-loading & {
+        background: #fff url(img/ajax-loader.gif) center center no-repeat;
+    }
+}
+.slick-slide {
+	outline: none;
+	display: flex !important;
+	justify-content: center;
+}
+
+.slick-prev,
+.slick-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: $grid-padding;
+    background-color: transparent;
+    z-index: 100;
+    
+    img {
+	    width: 40px;
+	    height: 40px;
+		transition: transform .2S ease-in-out;
+		
+		.highcontrast & {
+			filter: grayscale(100%) contrast(4);
+			padding: 1px;
+		}
+		
+		@include rwd(xwide) {
+		    width: auto;
+			height: auto;
+		}	    
+    }
+	
+	&:hover, 
+	&:focus {
+       background-color: transparent;
+       
+       img {
+	       transform: scale(1.1);
+       }
+    }
+    &.slick-disabled {
+        opacity: .2 !important;
+        cursor: default;
+        
+        &:hover img, 
+		&:focus img {
+			transform: none;
+		}
+    }
+}
+
+.slick-prev {
+	left: 0;
+	transform: translateY(-50%) scaleX(-1);
+	
+	@include rwd(xwide) {
+		left: -12rem;
+	}
+}
+.slick-next {
+	right: 0;
+	
+	@include rwd(xwide) {
+		right: -12rem;
+	}
+}
+
+
+.slick-dots {
+	position: absolute;
+	bottom: -60px;
+	width: 100%;
+	margin: 0;
+	padding: 1em 0; 
+	list-style: none;
+	text-align: center;
+	
+	li {
+		display: inline-block;
+		padding: 1em;
+		margin: 0;
+		
+		button {
+			padding: 0;
+			display: block;
+			width: 12px; height: 12px;
+			margin: 0 5px;
+			border-radius: 12px;
+			background-color: $primary-color;
+			@include a11y-hide();
+			transition: .2s ease-in-out;
+			
+			.highcontrast & {
+				background-color: #999;
+			}
+			
+			&:hover, &:focus {
+				transform: scale(1.6);
+				outline: none;
+			}
+		}
+		
+		&.slick-active button {
+			background-color: $secondary-color;
+
+				.highcontrast & {
+					background-color: #000;
+				}
+
+		}
+
+	}
+}
+
+.star-rotation {
+	animation: rotate-once 5s;
+}
+
+@keyframes rotate-forever {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes rotate-once {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(96deg);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

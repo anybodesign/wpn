@@ -1,0 +1,143 @@
+// Story
+
+.infographie {
+
+	.highcontrast & {
+		//content: url(img/infographie-nb.png);
+		//filter: grayscale(100%) contrast(4);
+	}
+}
+
+// Photos
+
+#photo {
+	background: url(img/pentagone-jaune.svg) right top no-repeat;
+	background-size: contain;
+	
+	.slider-container {
+		position: relative;
+		width: 100%;
+		
+		&::after {
+			content: '';
+			width: 100%;
+			height: 1px;
+			background-color: $text-color;
+			position: absolute;
+			top: 6.5rem;
+			left: 0;
+			z-index: 1;
+		}
+	}
+	
+	
+}
+
+.my-polas {
+	position: relative;
+	width: 100%;
+	padding: $grid-padding 0;
+	z-index: 2;
+	
+	@include rwd(large) {
+		padding: $grid-padding 6rem; 
+	}
+	@include rwd(xwide) {
+		padding: $grid-padding 0; 
+	}
+	
+	.slick-slide {
+		padding: 3rem;
+	}
+	
+	.slick-list {
+
+	}
+}
+
+.photos-infos {
+	margin-top: $grid-padding*6;
+	text-align: center;
+	
+	h2, h3, p { 
+		text-align: center; 
+	}
+
+}
+
+
+// Hello
+
+#hello {
+	position: relative;
+	background-image: url(img/bg-form.jpg);
+
+	.highcontrast & {
+		background-image: none;
+		background-color: #eee;
+	}
+	
+	h2 {
+		margin-bottom: $grid-padding/2;
+	}
+	
+	h2, p, label, legend { 
+		color: #fff;
+
+		.highcontrast & {
+			color: #000;
+		}			
+	}
+	
+	// overlay
+	
+	&::after {
+		content: '';
+		display: block;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0; left: 0;
+		background-color: rgba(0,0,0, .6); // niveau d'opacité
+		
+		.highcontrast & {
+			content: none;
+		}
+	}
+}
+
+.form-intro {
+	* {
+		text-align: center;
+	}
+}
+
+
+
+// Merci
+
+.thanks-section {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 10rem 0 0 0;
+	
+	h2 {
+		text-align: center;
+		margin-bottom: $grid-padding*2;
+	}
+}
+.author-infos {
+	list-style: none;
+	padding: 0;
+	text-align: center;
+	
+	a {
+		@extend .common-link;
+	}
+	
+	@include rwd(large) {
+		margin-bottom: 10rem;
+	}
+}
