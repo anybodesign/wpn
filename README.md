@@ -11,21 +11,23 @@ Notre page de démo : <https://lab.anybodesign.com/wpn/>
 ## Sources du projet 
 
 * [Slides de la conférence](https://lab.anybodesign.com/wpn/sources/wpndigital-ux-a11y-2018.pdf)
-* [Maquette Sketch](https://lab.anybodesign.com/wpn/sources/ux-a11y-wordpress.zip)
+* [Maquettes Sketch](https://lab.anybodesign.com/wpn/sources/ux-a11y-wordpress.zip)
 
 ## Autres ressources
 
 ### Couleurs
 * [Accessible Colors](http://accessible-colors.com) : Test des contrastes
 * [Color Safe](http://colorsafe.co) : Générer une palette de couleurs accessibles
+* [Tanaguru COntrast Finder](http://contrast-finder.tanaguru.com) : Des alternatives de couleurs accessibles
 * [Colour Contrast Analyser](https://developer.paciellogroup.com/resources/contrastanalyser/) : Application Mac/PC
 * [Stark](http://www.getstark.co) : Plugin Sketch
 * [Color Blindness](https://www.colour-blindness.org) : Extension Chrome
-* [WCAG Contrast Checker](https://addons.mozilla.org/fr/firefox/addon/wcag-contrast-checker/) : Etension Firefox 
+* [WCAG Contrast Checker](https://addons.mozilla.org/fr/firefox/addon/wcag-contrast-checker/) : Extension Firefox 
 
 ### Vérification du code
 * <https://validator.w3.org> : validateur W3C
 * <http://ffoodd.github.io/a11y.css/index.html> : a11y.css de Gaël Poupard
+* <http://khan.github.io/tota11y/> : Tests d'accessibilité avec prévisualisation
 
 ### Starter Thème
 * [From Scratch](https://github.com/anybodesign/from-scratch) : Un starter thème pour WordPress
