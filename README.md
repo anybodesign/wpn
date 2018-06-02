@@ -2,12 +2,16 @@
 
 ## Conférence au WPN Digital de Caen 2018
 
-Claire Bizingre est experte en accessibilité numérique, Thomas Villain est webdesigner, leur objectif commun est de concevoir un site WordPress ayant un bon niveau d’accessibilité. Ce talk sera l’occasion de montrer comment ces deux métiers travaillent ensemble pour créer un site WordPress prenant en compte l’accessibilité numérique dès le début du projet.
+Claire Bizingre est experte en accessibilité numérique, Thomas Villain est webdesigner, leur objectif commun est de concevoir un site WordPress ayant un bon niveau d’accessibilité. 
+
+Ce talk sera l’occasion de montrer comment ces deux métiers travaillent ensemble pour créer un site WordPress prenant en compte l’accessibilité numérique dès le début du projet.
+
+Notre page de démo : <https://lab.anybodesign.com/wpn/>
 
 ## Sources du projet 
 
-* [Slides de la conférence](https://lab.anybodesign.com/sources/wpndigital-ux-a11y-2018.pdf)
-* [Maquette Sketch](https://lab.anybodesign.com/sources/ux-a11y-wordpress.zip)
+* [Slides de la conférence](https://lab.anybodesign.com/wpn/sources/wpndigital-ux-a11y-2018.pdf)
+* [Maquette Sketch](https://lab.anybodesign.com/wpn/sources/ux-a11y-wordpress.zip)
 
 ## Autres ressources
 
