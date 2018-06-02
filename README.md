@@ -6,7 +6,11 @@ Claire Bizingre est experte en accessibilité numérique, Thomas Villain est web
 
 ## Sources du projet 
 
+<<<<<<< HEAD
 * [Slides de la conférence](https://lab.anybodesign.com/sources/wpndigital-ux-a11y-2018.pdf)
+=======
+* [Slides de la conférence](https://github.com/anybodesign/wpn/blob/master/transcript/wpndigital-ux-a11y-2018.pdf)
+>>>>>>> ad3a003f4e7a5a13a20c75473eaac2580f4ece36
 * [Maquette Sketch](https://lab.anybodesign.com/sources/ux-a11y-wordpress.zip)
 
 ## Autres ressources
